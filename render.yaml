@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: signal-api
+    env: docker
+    plan: free
+    autoDeploy: true
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MODE
+        value: native
+      - key: SIGNAL_CLI_OPTS
+        value: --config /home/.local/share/signal-cli
